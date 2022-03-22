@@ -21,7 +21,12 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, textviewTextview.text, Toast.LENGTH_SHORT).show()
             } else {
                 textviewTextview.text = city1.toString()
-             }
+            }
+        }
+
+        val buttonCityCopy = findViewById<Button>(R.id.city_copy)
+        buttonCityCopy.setOnClickListener {
+            textviewTextview.text = Repository.copyCity().toString()
         }
     }
 }
