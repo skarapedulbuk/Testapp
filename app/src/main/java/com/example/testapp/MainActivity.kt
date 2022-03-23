@@ -27,6 +27,18 @@ class MainActivity : AppCompatActivity() {
         val buttonCityCopy = findViewById<Button>(R.id.city_copy)
         buttonCityCopy.setOnClickListener {
             textviewTextview.text = Repository.copyCity().toString()
+            consoleCycleOutput()
         }
+    }
+
+    fun consoleCycleOutput() {
+        val citiesList = Repository.getWeatherList()
+
+        for (city in citiesList) println(city.town)
+
+        for (i in 0 until citiesList.size) println(citiesList[i].temperature)
+
+        for (i in 1..10 step 2) print(citiesList[1].toString())
+        println()
     }
 }
